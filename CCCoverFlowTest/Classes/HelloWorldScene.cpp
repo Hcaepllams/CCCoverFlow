@@ -74,6 +74,7 @@ bool HelloWorld::init()
     
     CCCoverFlow *flow = CCCoverFlow::create();
     this->addChild(flow);
+    flow->setPosition(ccp(0, 300));
     
     return true;
 }

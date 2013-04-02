@@ -21,6 +21,8 @@ public:
     ~CCCoverFlowCell();
 
     static CCCoverFlowCell *create(int index);
+    
+    void setAlphaAndScale(GLubyte opacity, float scale);
 };
 
 #endif /* defined(__CCCoverFlowTest__CCCoverFlowCell__) */

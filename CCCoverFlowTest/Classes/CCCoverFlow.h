@@ -46,6 +46,13 @@ public:
     
 private:
     int getCurrentAngel(int index);
+    float getCurrentScale(int index);
+    int getCurrentAlpha(int index);
+    void update(float dt);
+    
+protected:
+    CCPoint offsetFromIndex(int index);
+    int indexFromOffset(CCPoint point);
 };
 
 

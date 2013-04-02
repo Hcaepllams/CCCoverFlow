@@ -1,9 +1,9 @@
 //
-//  CCCoverFlowTestAppDelegate.h
-//  CCCoverFlowTest
+//  HelloworldAppDelegate.h
+//  Helloworld
 //
-//  Created by 陶 然景 on 13-4-1.
-//  Copyright __MyCompanyName__ 2013年. All rights reserved.
+//  Created by 然景 陶 on 12-12-24.
+//  Copyright EA 2012年. All rights reserved.
 //
 
 #ifndef  _APP_DELEGATE_H_

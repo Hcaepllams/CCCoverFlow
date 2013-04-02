@@ -1,19 +1,17 @@
 //
-//  CCCoverFlowTestAppDelegate.cpp
-//  CCCoverFlowTest
+//  HelloworldAppDelegate.cpp
+//  Helloworld
 //
-//  Created by 陶 然景 on 13-4-1.
-//  Copyright __MyCompanyName__ 2013年. All rights reserved.
+//  Created by 然景 陶 on 12-12-24.
+//  Copyright EA 2012年. All rights reserved.
 //
 
 #include "AppDelegate.h"
 
 #include "cocos2d.h"
-#include "SimpleAudioEngine.h"
 #include "HelloWorldScene.h"
 
 USING_NS_CC;
-using namespace CocosDenshion;
 
 AppDelegate::AppDelegate()
 {
@@ -48,15 +46,17 @@ bool AppDelegate::applicationDidFinishLaunching()
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground()
 {
-    CCDirector::sharedDirector()->stopAnimation();
-    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
-    SimpleAudioEngine::sharedEngine()->pauseAllEffects();
+    CCDirector::sharedDirector()->pause();
+
+    // if you use SimpleAudioEngine, it must be paused
+    // SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground()
 {
-    CCDirector::sharedDirector()->startAnimation();
-    SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
-    SimpleAudioEngine::sharedEngine()->resumeAllEffects();
+    CCDirector::sharedDirector()->resume();
+    
+    // if you use SimpleAudioEngine, it must resume here
+    // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 }

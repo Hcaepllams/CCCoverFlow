@@ -21,18 +21,19 @@ CCCoverFlowTableView* CCCoverFlowTableView::create(CCCoverFlow* dataSource, CCSi
 
 }
 
-CCPoint CCCoverFlowTableView::maxContainerOffset()
-{
-    if (m_tViewSize.height <= m_pContainer->getContentSize().height)
-    {
-        return ccp(0.0f, 0.0f);
-    }
-    else
-    {
-        return ccp(m_tViewSize.width - m_pContainer->getContentSize().width*m_pContainer->getScaleX(),
-                   m_tViewSize.height - m_pContainer->getContentSize().height*m_pContainer->getScaleY());
-    }
-}
+//CCPoint CCCoverFlowTableView::maxContainerOffset()
+//{
+//    if (m_tViewSize.height <= m_pContainer->getContentSize().height)
+//    {
+//        return ccp(0.0f, 0.0f);
+//    }
+//    else
+//    {
+//        return ccp(m_tViewSize.width - m_pContainer->getContentSize().width*m_pContainer->getScaleX(),
+//                   m_tViewSize.height - m_pContainer->getContentSize().height*m_pContainer->getScaleY());
+//    }
+//}
+
 
 bool CCCoverFlowTableView::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 {
