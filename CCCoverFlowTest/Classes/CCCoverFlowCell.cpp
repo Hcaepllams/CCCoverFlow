@@ -31,7 +31,6 @@ CCCoverFlowCell *CCCoverFlowCell::create(int index)
     cell->addChild(pSprite, 0);
     
     CCString *string = CCString::createWithFormat("%d", index);
-    CCLog ("%d", index);
     CCLabelTTF *label = CCLabelTTF::create(string->getCString(), "Helvetica", 20.0);
     label->setPosition(CCPointZero);
     label->setAnchorPoint(CCPointZero);

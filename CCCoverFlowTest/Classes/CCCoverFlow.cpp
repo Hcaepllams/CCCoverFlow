@@ -40,7 +40,7 @@ bool CCCoverFlow::init()
     
     this->setSlidingItems(CCArray::create());
     
-    this->setTableView(CCCoverFlowTableView::create(this, CCSize(960, 300)));
+    this->setTableView(CCCoverFlowTableView::create(this, CCSize(960, 58)));
     this->getTableView()->setDirection(kCCScrollViewDirectionHorizontal);
     this->getTableView()->setDelegate(this);
     this->addChild(this->getTableView());
@@ -52,7 +52,7 @@ bool CCCoverFlow::init()
     }
     m_pTableView->reloadData();
     
-//    this->scheduleUpdate();
+    this->scheduleUpdate();
     
     return true;
 }
@@ -85,12 +85,6 @@ CCSize CCCoverFlow::cellSizeForTable(CCTableView *table)
 
 CCTableViewCell* CCCoverFlow::tableCellAtIndex(CCTableView *table, unsigned int idx)
 {
-//    CCCoverFlowCell *cell = (CCCoverFlowCell*)table->dequeueCell();
-//    if (!cell) {
-//        cell = CCCoverFlowCell::create(idx);
-//        cell->autorelease();
-//    }
-//    cell->setIdx(idx);
     CCCoverFlowCell *cell = (CCCoverFlowCell*)m_pArrSlidingMenuItem->objectAtIndex(idx);
     
     int zOrder = 0;
@@ -104,17 +98,10 @@ CCTableViewCell* CCCoverFlow::tableCellAtIndex(CCTableView *table, unsigned int 
 
 int CCCoverFlow::getCurrentAngel(int index)
 {
-    int delta = index - m_pCurrentShownedIndex;
     if (index == m_pCurrentShownedIndex) // cell is on the left.
     {
         return 0;
     }
-//    
-//    if (index == 6)
-//    {
-//        return 360;
-//    }
-//    
     return 90;
 }
 
@@ -230,13 +217,15 @@ void CCCoverFlow::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEven
     float contentX = this->getTableView()->getContainer()->getPosition().x;
     
     CCCoverFlowCell *cell = (CCCoverFlowCell*)m_pArrSlidingMenuItem->objectAtIndex(0);
-    m_pCurrentShownedIndex = indexFromOffset(ccp((cell->getContentSize().width * 5) - contentX, 0));
-    m_pTableView->reloadData();
-    
+    m_pCurrentShownedIndex = indexFromOffset(ccp((cell->getContentSize().width * 5) - contentX, 0));    
 }
 
 void CCCoverFlow::update(float dt)
 {
-
-   
+    float contentX = this->getTableView()->getContainer()->getPosition().x;
+    
+    CCCoverFlowCell *cell = (CCCoverFlowCell*)m_pArrSlidingMenuItem->objectAtIndex(0);
+    m_pCurrentShownedIndex = indexFromOffset(ccp((cell->getContentSize().width * 5) - contentX, 0));
+    m_pTableView->reloadData();
 }
+

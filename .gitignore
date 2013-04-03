@@ -12,5 +12,8 @@
 *.la
 *.a
 
+# OS Files
+.DS_Store
+
 /CCCoverFlowTest/ios
 /CCCoverFlowTest/libs

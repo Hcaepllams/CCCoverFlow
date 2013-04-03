@@ -23,7 +23,7 @@ public:
     
     static CCCoverFlowTableView* create(CCCoverFlow* dataSource, CCSize size);
     
-   // CCPoint maxContainerOffset();
+    CCPoint maxContainerOffset();
     
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
     virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
